@@ -5,3 +5,4 @@ medical_diagnosis_task:
   expected_output: >
     JSON formatted response with up to 3 validated ICD-10 suggestions for each potential diagnosis identified in <diagnosis_text>{diagnosis_text}</diagnosis_text> and an explanation oh why they fit. Include the url to the icd10 who database from the tool in the JSON response.  
   agent: medical_coder
+  output_file: finalanswerDg.md 

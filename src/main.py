@@ -1,10 +1,9 @@
-#!/usr/bin/env python
-import sys
+import json
+from datetime import datetime
 from crew import AstackcrewCrew
 import agentops
 
 agentops.init(default_tags=['crewai', 'agentstack'])
-
 
 def run():
     """
@@ -16,6 +15,7 @@ def run():
     AstackcrewCrew().crew().kickoff(inputs=inputs)
 
 
+
 def train():
     """
     Train the crew for a given number of iterations.
@@ -25,10 +25,8 @@ def train():
     }
     try:
         AstackcrewCrew().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
-
     except Exception as e:
         raise Exception(f"An error occurred while training the crew: {e}")
-
 
 def replay():
     """
@@ -36,23 +34,18 @@ def replay():
     """
     try:
         AstackcrewCrew().crew().replay(task_id=sys.argv[1])
-
     except Exception as e:
         raise Exception(f"An error occurred while replaying the crew: {e}")
-
 
 def test():
     """
     Test the crew execution and returns the results.
     """
-    inputs = {
-    }
+    inputs = {}
     try:
         AstackcrewCrew().crew().test(n_iterations=int(sys.argv[1]), openai_model_name=sys.argv[2], inputs=inputs)
-
     except Exception as e:
-        raise Exception(f"An error occurred while replaying the crew: {e}")
-
+        raise Exception(f"An error occurred while testing the crew: {e}")
 
 if __name__ == '__main__':
     run()
