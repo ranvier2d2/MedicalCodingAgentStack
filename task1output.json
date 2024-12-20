@@ -1,0 +1,44 @@
+```json
+{
+  "Chronic Fatigue Syndrome": [
+    {
+      "code": "G93.3",
+      "description": "Postviral fatigue syndrome",
+      "url": "https://icd.who.int/browse10/2019/en#/G90-G99",
+      "explanation": "This code is used for Chronic Fatigue Syndrome as it is often classified under postviral fatigue syndrome."
+    }
+  ],
+  "Down Syndrome": [
+    {
+      "code": "Q90.9",
+      "description": "Down syndrome, unspecified",
+      "url": "https://icd.who.int/browse10/2019/en#/Q90-Q99",
+      "explanation": "Q90.9 is the code for Down Syndrome when not specified further."
+    }
+  ],
+  "Marfan Syndrome": [
+    {
+      "code": "Q87.4",
+      "description": "Marfan syndrome",
+      "url": "https://icd.who.int/browse10/2019/en#/Q80-Q89",
+      "explanation": "Q87.4 is the code for Marfan Syndrome, which is a connective tissue disorder."
+    }
+  ],
+  "CHARGE Syndrome": [
+    {
+      "code": "Q87.8",
+      "description": "Other specified congenital malformation syndromes, not elsewhere classified",
+      "url": "https://icd.who.int/browse10/2019/en#/Q80-Q89",
+      "explanation": "CHARGE syndrome falls under Q87.8, which is used for other specified congenital malformation syndromes affecting multiple systems."
+    }
+  ],
+  "Cushing's Syndrome": [
+    {
+      "code": "E24.9",
+      "description": "Cushing syndrome, unspecified",
+      "url": "https://icd.who.int/browse10/2019/en#/E20-E35",
+      "explanation": "E24.9 is used for Cushing's syndrome when unspecified."
+    }
+  ]
+}
+```
