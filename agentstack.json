@@ -1,0 +1,10 @@
+{
+    "framework": "crewai",
+    "tools": [
+        "file_read"
+    ],
+    "default_model": "azure/gpt-4o",
+    "agentstack_version": "0.2.2.2",
+    "template": "none",
+    "template_version": "0"
+}

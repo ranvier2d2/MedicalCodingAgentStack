@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "astack_crew"
+version = "0.0.1"
+description = "This is the start of your AgentStack project."
+authors = ["Name <Email>"]
+license = "MIT"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = ">=3.10,<=3.13"
+agentstack = {extras = ["crewai"], version="0.2.2.2"}
+
+[project.scripts]
+astack_crew = "astack_crew.main:run"
+run_crew = "astack_crew.main:run"
+train = "astack_crew.main:train"
+replay = "astack_crew.main:replay"
+test = "astack_crew.main:test"

@@ -1,0 +1,7 @@
+medical_diagnosis_task:
+  description: >
+    Analyze a candidate medical diagnosis {diagnosis_text} and generate ICD-10 and SNOMED CT code suggestions.
+    Provide a detailed explanation for the choices made.
+  expected_output: >
+    JSON formatted response with ICD-10 and SNOMED CT suggestions and an explanation.
+  agent: medical_coder
