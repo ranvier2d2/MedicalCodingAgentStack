@@ -14,7 +14,7 @@ class Gpt4SuggestionToolInput(BaseModel):
 class Gpt4SuggestionTool(BaseTool):
     name: str = "gpt4_suggestion_tool"
     description: str = (
-        "Generates ICD-10 and SNOMED CT code suggestions from diagnosis text."
+        "Generates ICD-10 code suggestions from diagnosis text, providing detailed explanations for each suggestion."
     )
     args_schema: Type[BaseModel] = Gpt4SuggestionToolInput
 
@@ -33,28 +33,24 @@ class Gpt4SuggestionTool(BaseTool):
             raise ValueError(f"Missing required environment variables: {', '.join(missing_vars)}")
 
     def _run(self, argument: str) -> str:
-        """Generate ICD-10 and SNOMED CT suggestions for a medical diagnosis."""
-        system_message = """You are a medical coding expert specializing in ICD-10 and SNOMED CT classifications.
+        """Generate ICD-10 suggestions for a medical diagnosis."""
+        system_message = """You are a medical coding expert specializing in ICD-10 classifications.
     Your task is to analyze medical diagnoses and suggest appropriate codes.
-    Always return your response in the specified JSON format with exactly 3 codes for each classification system."""
+    Always return your response in the specified JSON format with up to 5 relevant ICD-10 codes."""
 
-        prompt = f"""Analyze the following medical diagnosis and suggest appropriate ICD-10 and SNOMED CT codes.
+        prompt = f"""Analyze the following medical diagnosis and suggest appropriate ICD-10 codes.
 
     Diagnosis: {argument}
 
     Return your response in this exact JSON format:
     {{
         "icd10_suggestions": [
-            {{"code": "R51.9", "description": "Headache, unspecified"}},
-            {{"code": "G44.1", "description": "Vascular headache"}},
-            {{"code": "I60.9", "description": "Subarachnoid hemorrhage"}}
+            {{"code": "S06.0", "description": "Concussion"}},
+            {{"code": "R55", "description": "Syncope and collapse"}},
+            {{"code": "S00.0", "description": "Superficial injury of scalp"}}
         ],
-        "snomed_suggestions": [
-            {{"code": "25064002", "description": "Headache"}},
-            {{"code": "37796009", "description": "Migraine"}},
-            {{"code": "55480006", "description": "Thunderclap headache"}}
-        ],
-        "explanation": "Brief explanation of why you chose these codes"
+        "explanation": "Detailed explanation of why these codes are appropriate for the diagnosis",
+        "who_database_url": "https://icd.who.int/browse10/2019/en"
     }}"""
 
         try:

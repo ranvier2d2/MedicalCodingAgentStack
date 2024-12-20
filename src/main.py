@@ -11,7 +11,7 @@ def run():
     Run the crew.
     """
     inputs = {
-        "diagnosis_text": "Se golpea con el celular en la cabeza y se desmaya por 2 minutos",
+        "diagnosis_text": "Chronic Fatigue Syndrome, Down Syndrome, Marfan Syndrome, CHARGE syndrome, Cushing's syndrome",
     }
     AstackcrewCrew().crew().kickoff(inputs=inputs)
 
