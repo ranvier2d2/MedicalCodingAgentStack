@@ -13,7 +13,7 @@ class AstackcrewCrew():
         return Agent(
             config=self.agents_config["medical_coder"],
             verbose=True,
-            tools=[tools.custom_tool, tools.gpt4_suggestion_tool]
+            tools=[tools.custom_tool, tools.gpt4_suggestion_tool, tools.icd10_database_tool]
            #add tools
         )
 
