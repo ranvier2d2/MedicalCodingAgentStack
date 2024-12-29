@@ -2,7 +2,7 @@
 name = "astack_crew"
 version = "0.0.1"
 description = "This is the start of your AgentStack project."
-authors = ["Name <Email>"]
+authors = ["Bastian Venegas <bastian@example.com>"]
 license = "MIT"
 package-mode = false
 

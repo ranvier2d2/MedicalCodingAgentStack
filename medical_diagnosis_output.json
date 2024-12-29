@@ -1,0 +1,52 @@
+```json
+{
+  "potential_diagnoses": [
+    {
+      "diagnosis": "Seizures",
+      "icd10_suggestions": [
+        {
+          "code": "G40.909",
+          "description": "Epilepsy, unspecified, not intractable, without status epilepticus",
+          "rationale": "This code is used for epilepsy that is unspecified and not considered resistant to treatment, without the presence of status epilepticus, which makes it a standard choice for unspecified seizure presentations."
+        },
+        {
+          "code": "R56.9",
+          "description": "Unspecified convulsions",
+          "rationale": "This code is applicable for general seizure activity when a more specific diagnosis such as epilepsy cannot be confirmed. It is often used when the seizure type is not yet determined."
+        }
+      ]
+    },
+    {
+      "diagnosis": "Depression",
+      "icd10_suggestions": [
+        {
+          "code": "F32.9",
+          "description": "Major depressive disorder, single episode, unspecified",
+          "rationale": "This code applies to cases of depression where the specifics of the disorder, such as severity or episode type, are not documented. It serves as a general classification for major depression in single episodes with unspecified parameters."
+        },
+        {
+          "code": "F33.9",
+          "description": "Major depressive disorder, recurrent, unspecified",
+          "rationale": "Used when depression is known to be recurrent but lacks specifics about its nature or frequency. This captures the chronic and recurring aspect without detailing intensity or particular characteristics."
+        }
+      ]
+    },
+    {
+      "diagnosis": "Migraine",
+      "icd10_suggestions": [
+        {
+          "code": "G43.0",
+          "description": "Migraine without aura",
+          "rationale": "This code is for migraines that do not involve aura, meaning no preceding neurological disturbance, and is one of the most common forms of migraine headaches."
+        },
+        {
+          "code": "G43.1",
+          "description": "Migraine with aura",
+          "rationale": "This diagnosis code covers migraines with aura, a type of migraine that involves preceding neurological symptoms. It is the second most commonly encountered migraine type clinically."
+        }
+      ]
+    }
+  ]
+}
+```
+This JSON response summarizes the potential diagnoses derived from the input text and includes prioritized ICD-10 codes with detailed explanations for each condition.

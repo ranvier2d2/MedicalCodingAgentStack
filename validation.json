@@ -1,0 +1,36 @@
+```json
+{
+  "diagnosis": "CHARGE syndrome",
+  "validation_results": [
+    {
+      "code": "Q90.9",
+      "description": "Down syndrome, unspecified",
+      "validation_status": "invalid",
+      "explanation": "The suggested code is not suitable for CHARGE syndrome as it specifically pertains to Down syndrome, which is a different chromosomal abnormality.",
+      "url": "https://icd.who.int/browse10/2019/en#/Q90-Q99"
+    },
+    {
+      "code": "Q16.0",
+      "description": "Congenital absence of the ear auricle",
+      "validation_status": "valid",
+      "explanation": "This code accurately represents ear anomalies, which are a common feature of CHARGE syndrome.",
+      "url": "https://icd.who.int/browse10/2019/en#/Q10-Q18"
+    },
+    {
+      "code": "Q21.0",
+      "description": "Ventricular septal defect",
+      "validation_status": "valid",
+      "explanation": "Ventricular septal defects are common cardiac defects in CHARGE syndrome cases, making this code a relevant inclusion.",
+      "url": "https://icd.who.int/browse10/2019/en#/Q20-Q28"
+    },
+    {
+      "code": "Q35.9",
+      "description": "Cleft palate, unspecified",
+      "validation_status": "valid",
+      "explanation": "This code is valid as it represents potential palatal defects present in CHARGE syndrome.",
+      "url": "https://icd.who.int/browse10/2019/en#/Q35-Q37"
+    }
+  ],
+  "database_reference_url": "https://icd.who.int/browse10/2019/en"
+}
+```
