@@ -1,9 +1,9 @@
 from operator import truediv
 from crewai import Agent, Crew, Process, Task
-#from crewai.tasks.conditional_task import ConditionalTask
 from crewai.project import CrewBase, agent, crew, task
 from crewai.tasks.task_output import TaskOutput
 import tools
+
 
 # def has_unvalidated_codes(output: TaskOutput) -> bool:
 #     """
@@ -57,7 +57,7 @@ class AstackcrewCrew:
     def validation_task(self) -> Task:
         return Task(
             config=self.tasks_config['validation_task'],
-            async_execution=True,  # Run synchronously to ensure proper data validation
+            async_execution=False,  # Run synchronously to ensure proper data validation
         )
 
     @task

@@ -9,19 +9,12 @@ import logging
 agentops.init(default_tags=['crewai', 'agentstack'])
 
 # Configure logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
 def run():
-    """
-    Run the crew with default inputs.
-    """
     logging.info("Starting the crew...")
-    inputs = {
-        "diagnosis_text": "Seizures, Depression, Migraine" 
-}
-# 	• Example: Neurological and Psychiatric Symptoms
     try:
-        result = AstackcrewCrew().crew().kickoff(inputs=inputs)
+        result = AstackcrewCrew().crew().kickoff(
+            inputs={"diagnosis_text": "Seizures, Depression, Migraine"}
+        )
         logging.info(f"Crew execution result: {result}")
     except Exception as e:
         logging.error(f"An error occurred during crew execution: {e}")

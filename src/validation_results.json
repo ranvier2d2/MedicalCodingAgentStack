@@ -1,0 +1,42 @@
+```json
+{
+  "code_validations": [
+    {
+      "code": "G43.0",
+      "validation_status": "valid",
+      "explanation": "The code is valid and matches the description 'Migraine without aura', although the ICD-10 includes '[common migraine]'.",
+      "url": "https://icd.who.int/browse10/2019/en#/G40-G47"
+    },
+    {
+      "code": "G43.1",
+      "validation_status": "valid",
+      "explanation": "The code is valid and matches the description 'Migraine with aura', with additional note '[classical migraine]'.",
+      "url": "https://icd.who.int/browse10/2019/en#/G40-G47"
+    },
+    {
+      "code": "G43.7",
+      "validation_status": "invalid",
+      "explanation": "The code 'G43.7' is not found in the ICD-10 database, indicating it might be incorrect or obsolete."
+    }
+  ],
+  "description_validations": [
+    {
+      "description": "Migraine without aura",
+      "validation_status": "valid",
+      "explanation": "The description matches the existing ICD-10 description for code 'G43.0'.",
+      "url": "https://icd.who.int/browse10/2019/en#/G40-G47"
+    },
+    {
+      "description": "Migraine with aura",
+      "validation_status": "valid",
+      "explanation": "The description matches the existing ICD-10 description for code 'G43.1'.",
+      "url": "https://icd.who.int/browse10/2019/en#/G40-G47"
+    },
+    {
+      "description": "Chronic migraine without aura",
+      "validation_status": "invalid",
+      "explanation": "A matching description for 'Chronic migraine without aura' is not found in the ICD-10 database, indicating it might be part of another category or not specifically listed."
+    }
+  ]
+}
+```

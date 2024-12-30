@@ -51,7 +51,8 @@ reporting_task:
     - The rationale for associating each diagnosis with its respective ICD-10 code.
     - Invalid diagnoses or descriptions should be reported with their URL as well, setting the value "url": null.
     - NO TEXT IS ALLOWED OUTSIDE THE JSON FORMATTED RESPONSE.
-    - Example with mock data with multiple diagnoses in diagnosis_text:
+    - ENSURE RESULTS ARE JSON PARSABLE.
+    - Example JSON with mock data with multiple diagnoses in diagnosis_text. Your output must have the same json ("dictionary") structure.
     {{
       "final_report": {{
         "diagnoses_report": [
