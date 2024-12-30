@@ -1,34 +1,38 @@
 ```json
 {
-  "Validation Results": [
+  "validation_results": [
     {
-      "Suggested Code": "I50.3",
-      "Suggested Description": "Diastolic (congestive) heart failure",
-      "Validation": "Failed",
-      "Reason": "Invalid ICD-10 code according to WHO database."
+      "code": "M34.0",
+      "description": "Progressive systemic sclerosis",
+      "valid": true,
+      "note": "Description matches the official WHO description."
+    },
+    {
+      "code": "M34.1",
+      "description": "CR(E)ST syndrome",
+      "valid": true,
+      "note": "Description matches the official WHO description."
+    },
+    {
+      "code": "M34.2",
+      "description": "Systemic sclerosis induced by drug and chemical",
+      "valid": true,
+      "note": "Minor wording difference; description effectively matches the official WHO description."
+    },
+    {
+      "code": "M34.8",
+      "description": "Other forms of systemic sclerosis",
+      "valid": true,
+      "note": "Description matches the official WHO description."
+    },
+    {
+      "code": "M34.9",
+      "description": "Systemic sclerosis, unspecified",
+      "valid": true,
+      "note": "Description matches the official WHO description."
     }
   ],
-  "Similar Code Suggestions": [
-    {
-      "Code": "I50",
-      "Description": "Heart failure",
-      "Explanation": "Broad category covering various heart failure types."
-    },
-    {
-      "Code": "I50.0",
-      "Description": "Congestive heart failure",
-      "Explanation": "Common condition associated with heart failure symptoms."
-    },
-    {
-      "Code": "I50.1",
-      "Description": "Left ventricular failure",
-      "Explanation": "Related to ejection fraction issues."
-    },
-    {
-      "Code": "I50.9",
-      "Description": "Heart failure, unspecified",
-      "Explanation": "General use when specific type of heart failure is not listed."
-    }
-  ]
+  "similar_code_suggestions": [],
+  "explanation": "All provided codes and descriptions for 'Esclerodermia' are valid and match the WHO database as specified."
 }
 ```

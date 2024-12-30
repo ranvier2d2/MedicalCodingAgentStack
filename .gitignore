@@ -166,3 +166,6 @@ cython_debug/
 # Documentation files
 Documentation_Link_For_Specific_Premade_Tools.txt
 CompleteASTACKProject.md
+
+# windsurf rules
+.windsurfrules

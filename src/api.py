@@ -1,14 +1,17 @@
 import logging
+import os
 from typing import Dict, Any, Optional
 from uuid import uuid4
 from datetime import datetime
-from fastapi import FastAPI, BackgroundTasks, HTTPException
+import agentops
+from fastapi import BackgroundTasks, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import json
-import agentops
-
 from crew import AstackcrewCrew
+
+# Suppress OpenTelemetry warnings
+logging.getLogger("opentelemetry").setLevel(logging.ERROR)
 
 # ------------------------------------------------------------------------------
 # 1) Configure Logging and FastAPI
@@ -31,15 +34,10 @@ app.add_middleware(
 )
 
 # ------------------------------------------------------------------------------
-# 2) AgentOps Initialization
+# 2) AgentOps Configuration
 # ------------------------------------------------------------------------------
-agentops.init(
-    default_tags=["crewai", "agentstack"], 
-    skip_auto_end_session=True
-)
-# Explanation:
-#  - This sets up a global single session context. 
-#  - skip_auto_end_session=True means we’ll explicitly call end_session at the end of each task.
+# Note: AgentOps initialization is now done per-task in run_crew_task() instead of globally.
+# This allows each task to have its own independent session with proper start/end timing.
 
 # ------------------------------------------------------------------------------
 # 3) Pydantic Models
@@ -94,7 +92,8 @@ def create_crew_task_callback(task_id: str):
 def run_crew_task(task_id: str, inputs: Dict[str, Any]):
     """
     Launches the Crew in single-session mode. 
-    We'll end the session after the run completes.
+    Each task gets its own AgentOps session that starts when the task starts
+    and ends when the task completes or fails.
     """
     logger.info(f"[{task_id}] Starting background run in single-session mode.")
 
@@ -117,16 +116,17 @@ def run_crew_task(task_id: str, inputs: Dict[str, Any]):
         logger.error(f"[{task_id}] Error in run_crew_task: {e}")
         tasks[task_id] = TaskStatus(status="failed", error=str(e))
 
-    finally:
-        # End the session with AgentOps
-        end_state = "Success" if tasks[task_id].status == "completed" else "Fail"
-        # `end_state` can be "Success", "Fail", or "Indeterminate"
-        # Just use end_state and end_state_reason (video, is_auto_end are optional)
-        agentops.end_session(
-            end_state=end_state,
-            end_state_reason=f"Task {task_id} ended with status={tasks[task_id].status}"
-        )
-        logger.info(f"[{task_id}] agentops.end_session called with end_state={end_state}.")
+    # finally:
+    #     # End the session with AgentOps
+    #     end_state = "Success" if tasks[task_id].status == "completed" else "Fail"
+    #     try:
+    #         agentops.end_session(
+    #             end_state=end_state,
+    #             end_state_reason=f"Task {task_id} ended with status={tasks[task_id].status}"
+    #         )
+    #         logger.info(f"[{task_id}] agentops.end_session called with end_state={end_state}.")
+    #     except Exception as e:
+    #         logger.error(f"[{task_id}] Error ending AgentOps session: {e}")
 
 # ------------------------------------------------------------------------------
 # 7) API Endpoint to Launch Crew
@@ -138,14 +138,31 @@ async def run_crew_endpoint(inputs: RunInput, background_tasks: BackgroundTasks)
     Body: { "diagnosis_text": "some text" }
     Returns: { "task_id": "<uuid>" }
     """
+
     task_id = str(uuid4())
     logger.info(f"[{task_id}] /run called - scheduling background task.")
 
+    # Initialize task status and schedule background task first
     tasks[task_id] = TaskStatus(status="running")
-    background_tasks.add_task(run_crew_task, task_id, inputs.dict())
+    background_tasks.add_task(run_crew_task, task_id, inputs.model_dump())
+
+    # Try to initialize AgentOps session (but continue even if it fails)
+    try:
+        # Initialize AgentOps for this endpoint request.
+        tags = ["crewai", "agentstack", task_id]
+        logger.debug(f"[{task_id}] Initializing AgentOps with tags: {tags}")
+        agentops.init(
+            default_tags=tags,
+            #skip_auto_end_session=True,  # I commented out for testing purposes. 
+            # DO NOT add other keys to agentops.init()!
+        )
+        logger.info(f"[{task_id}] Initialized AgentOps session with tags.")
+    except Exception as e:
+        logger.error(f"[{task_id}] Error initializing AgentOps session: {e}")
+        
 
     return {"task_id": task_id}
-
+# DO NOT end the session in this endpoint!
 # ------------------------------------------------------------------------------
 # 8) API Endpoint to Check Status
 # ------------------------------------------------------------------------------

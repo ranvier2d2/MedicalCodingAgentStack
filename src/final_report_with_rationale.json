@@ -3,53 +3,81 @@
   "final_report": {
     "diagnoses_report": [
       {
-        "diagnosis": "Heart failure with preserved ejection fraction",
+        "diagnosis": "Esclerodermia",
         "codes": [
           {
-            "code": "I50.3",
-            "status": "invalid",
-            "explanation": "Code I50.3 is not valid according to the ICD-10 WHO database.",
-            "rationale": "Attempted to capture diastolic heart failure which may involve preserved ejection fraction, though this code is incorrect.",
-            "url": null
+            "code": "M34.0",
+            "status": "valid",
+            "explanation": "Code M34.0 is valid for Progressive systemic sclerosis.",
+            "rationale": "Progressive systemic sclerosis is a form of scleroderma that matches the diagnosis.",
+            "url": "https://icd.who.int/browse10/2019/en#/M30-M36"
           },
           {
-            "code": "I50",
+            "code": "M34.1",
             "status": "valid",
-            "explanation": "Code I50 is valid for Heart failure, providing a broad category that includes preserved ejection fraction.",
-            "rationale": "Chosen as a general category for various types of heart failure, including those with preserved ejection fraction.",
-            "url": "https://icd.who.int/browse10/2019/en#/I50"
+            "explanation": "Code M34.1 is valid for CR(E)ST syndrome.",
+            "rationale": "CR(E)ST syndrome is a variant of systemic sclerosis covered under scleroderma.",
+            "url": "https://icd.who.int/browse10/2019/en#/M30-M36"
           },
           {
-            "code": "I50.0",
+            "code": "M34.2",
             "status": "valid",
-            "explanation": "Code I50.0 is valid for Congestive heart failure.",
-            "rationale": "Involvement of symptoms common across heart failure with preserved ejection fraction can align with congestive heart failure.",
-            "url": "https://icd.who.int/browse10/2019/en#/I50"
+            "explanation": "Code M34.2 is valid for Systemic sclerosis induced by drug and chemical.",
+            "rationale": "This code is used when scleroderma is induced by external agents.",
+            "url": "https://icd.who.int/browse10/2019/en#/M30-M36"
           },
           {
-            "code": "I50.1",
+            "code": "M34.8",
             "status": "valid",
-            "explanation": "Code I50.1 is valid for Left ventricular failure.",
-            "rationale": "Ejection fraction issues are related to left ventricular problems, making this an appropriate choice for heart failure with preserved ejection fraction.",
-            "url": "https://icd.who.int/browse10/2019/en#/I50"
+            "explanation": "Code M34.8 is valid for Other forms of systemic sclerosis.",
+            "rationale": "Covers other specific types of systemic sclerosis not individually classified.",
+            "url": "https://icd.who.int/browse10/2019/en#/M30-M36"
           },
           {
-            "code": "I50.9",
+            "code": "M34.9",
             "status": "valid",
-            "explanation": "Code I50.9 is valid for Heart failure, unspecified.",
-            "rationale": "Used when specific details of the heart failure type are not catalogued, making it suitable for heart failure with preserved ejection fraction.",
-            "url": "https://icd.who.int/browse10/2019/en#/I50"
+            "explanation": "Code M34.9 is valid for Systemic sclerosis, unspecified.",
+            "rationale": "Used when the specific type of systemic sclerosis is not specified.",
+            "url": "https://icd.who.int/browse10/2019/en#/M30-M36"
           }
         ]
       }
     ],
     "validation_report": [
       {
-        "code": "I50.3",
-        "description": "Diastolic (congestive) heart failure",
-        "validation_status": "invalid",
-        "explanation": "The code I50.3 failed validation and is not a recognized code in the ICD-10 WHO database, indicating either an incorrect or deprecated code.",
-        "url": null
+        "code": "M34.0",
+        "description": "Progressive systemic sclerosis",
+        "validation_status": "valid",
+        "explanation": "The code M34.0 matches the description 'Progressive systemic sclerosis' in the ICD-10 WHO database.",
+        "url": "https://icd.who.int/browse10/2019/en#/M30-M36"
+      },
+      {
+        "code": "M34.1",
+        "description": "CR(E)ST syndrome",
+        "validation_status": "valid",
+        "explanation": "The code M34.1 matches the description 'CR(E)ST syndrome' in the ICD-10 WHO database.",
+        "url": "https://icd.who.int/browse10/2019/en#/M30-M36"
+      },
+      {
+        "code": "M34.2",
+        "description": "Systemic sclerosis induced by drug and chemical",
+        "validation_status": "valid",
+        "explanation": "The code M34.2 description is a minor wording variation but effectively matches the ICD-10 WHO database.",
+        "url": "https://icd.who.int/browse10/2019/en#/M30-M36"
+      },
+      {
+        "code": "M34.8",
+        "description": "Other forms of systemic sclerosis",
+        "validation_status": "valid",
+        "explanation": "The code M34.8 matches the description 'Other forms of systemic sclerosis' in the ICD-10 WHO database.",
+        "url": "https://icd.who.int/browse10/2019/en#/M30-M36"
+      },
+      {
+        "code": "M34.9",
+        "description": "Systemic sclerosis, unspecified",
+        "validation_status": "valid",
+        "explanation": "The code M34.9 matches the description 'Systemic sclerosis, unspecified' in the ICD-10 WHO database.",
+        "url": "https://icd.who.int/browse10/2019/en#/M30-M36"
       }
     ]
   }
