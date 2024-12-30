@@ -13,7 +13,7 @@ def run():
     logging.info("Starting the crew...")
     try:
         result = AstackcrewCrew().crew().kickoff(
-            inputs={"diagnosis_text": "headache"}
+            inputs={"diagnosis_text": "migraine"}
         )
         logging.info(f"Crew execution result: {result}")
     except Exception as e:
