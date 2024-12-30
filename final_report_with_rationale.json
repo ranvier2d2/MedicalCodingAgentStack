@@ -3,81 +3,76 @@
   "final_report": {
     "diagnoses_report": [
       {
-        "diagnosis": "Migraine",
+        "diagnosis": "Lower Back Pain",
         "codes": [
           {
-            "code": "G43.0",
+            "code": "M54.5",
             "status": "valid",
-            "explanation": "Code G43.0 is valid and corresponds to Migraine without aura.",
-            "rationale": "This code was selected as it specifically describes migraines that occur without any aura symptoms.",
-            "url": "https://icd.who.int/browse10/2019/en#/G43"
-          },
+            "explanation": "Code M54.5 is valid for Low back pain.",
+            "rationale": "This code is assigned because it specifically matches the diagnosis of lower back pain.",
+            "url": "https://icd.who.int/browse10/2019/en#/M50-M54"
+          }
+        ]
+      },
+      {
+        "diagnosis": "Osteoarthritis",
+        "codes": [
           {
-            "code": "G43.1",
-            "status": "valid",
-            "explanation": "Code G43.1 is valid and represents Migraine with aura.",
-            "rationale": "This code covers migraines that involve aura, providing a precise categorization in scenarios where aura symptoms are present.",
-            "url": "https://icd.who.int/browse10/2019/en#/G43"
-          },
-          {
-            "code": "G43.7",
+            "code": "M19.90",
             "status": "invalid",
-            "explanation": "The code G43.7 is not validated in the ICD-10 database. Alternatives include G43.3 and G43.8.",
-            "rationale": "This code was for chronic migraine without aura but was not found in the ICD-10 database. Alternative codes cover similar conditions.",
-            "url": null
+            "explanation": "Code M19.90 was not found in the ICD-10 database.",
+            "rationale": "Unspecified osteoarthritis at an unspecified site was selected due to a general diagnosis of osteoarthritis, but the code was invalid."
           },
           {
-            "code": "G43.8",
-            "status": "valid",
-            "explanation": "Code G43.8 is valid for Other migraine.",
-            "rationale": "This code encompasses migraines that do not fall under more specific categories, thus providing a catch-all for uncommon migraine variations.",
-            "url": "https://icd.who.int/browse10/2019/en#/G43"
+            "code": "M06.9",
+            "status": "suggested",
+            "explanation": "The suggested code M06.9 for Rheumatoid arthritis is similar but not an exact match.",
+            "rationale": "Rheumatoid arthritis, unspecified, was suggested as an alternative based on its similar classification in arthritis conditions.",
+            "url": "https://icd.who.int/browse10/2019/en#/M05-M14"
           },
           {
-            "code": "G43.9",
+            "code": "M08.9",
+            "status": "suggested",
+            "explanation": "The suggested code M08.9 for Juvenile arthritis is similar but not an exact match.",
+            "rationale": "Juvenile arthritis, unspecified, was suggested as an alternative based on its classification in arthritis conditions.",
+            "url": "https://icd.who.int/browse10/2019/en#/M05-M14"
+          }
+        ]
+      },
+      {
+        "diagnosis": "Fibromyalgia",
+        "codes": [
+          {
+            "code": "M79.7",
             "status": "valid",
-            "explanation": "Code G43.9 is valid and refers to Migraine, unspecified.",
-            "rationale": "This code is ideal for general cases where detailed migraine classification is unavailable.",
-            "url": "https://icd.who.int/browse10/2019/en#/G43"
+            "explanation": "Code M79.7 is valid for Fibromyalgia.",
+            "rationale": "The code is accurately matched to the diagnosis of fibromyalgia, which is a recognized condition within ICD-10.",
+            "url": "https://icd.who.int/browse10/2019/en#/M70-M79"
           }
         ]
       }
     ],
     "validation_report": [
       {
-        "code": "G43.0",
-        "description": "Migraine without aura",
+        "code": "M54.5",
+        "description": "Low back pain",
         "validation_status": "valid",
-        "explanation": "The code G43.0 is accurately classified under migraines without aura in the ICD-10 database.",
-        "url": "https://icd.who.int/browse10/2019/en#/G43"
+        "explanation": "The code M54.5 matches the description 'Low back pain' in the ICD-10 WHO database.",
+        "url": "https://icd.who.int/browse10/2019/en#/M50-M54"
       },
       {
-        "code": "G43.1",
-        "description": "Migraine with aura",
-        "validation_status": "valid",
-        "explanation": "The code G43.1 is confirmed for migraines with aura within the ICD-10 database.",
-        "url": "https://icd.who.int/browse10/2019/en#/G43"
-      },
-      {
-        "code": "G43.7",
-        "description": "Chronic migraine without aura",
+        "code": "M19.90",
+        "description": "Unspecified osteoarthritis, unspecified site",
         "validation_status": "invalid",
-        "explanation": "The code G43.7 does not appear in the ICD-10 database. Alternatives G43.3 (Complicated migraine) and G43.8 (Other migraine) are suggested.",
+        "explanation": "The code M19.90 was not found in the ICD-10 WHO database.",
         "url": null
       },
       {
-        "code": "G43.8",
-        "description": "Other migraine",
+        "code": "M79.7",
+        "description": "Fibromyalgia",
         "validation_status": "valid",
-        "explanation": "The code G43.8 is verified in the ICD-10 database as representing other migraines.",
-        "url": "https://icd.who.int/browse10/2019/en#/G43"
-      },
-      {
-        "code": "G43.9",
-        "description": "Migraine, unspecified",
-        "validation_status": "valid",
-        "explanation": "Code G43.9 is correctly identified for unspecified migraines in the ICD-10 database.",
-        "url": "https://icd.who.int/browse10/2019/en#/G43"
+        "explanation": "The code M79.7 matches the description 'Fibromyalgia' in the ICD-10 WHO database.",
+        "url": "https://icd.who.int/browse10/2019/en#/M70-M79"
       }
     ]
   }

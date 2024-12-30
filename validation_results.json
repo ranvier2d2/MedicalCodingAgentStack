@@ -1,43 +1,36 @@
-```json
 {
-  "validation_results": [
+  "Validation Results": [
     {
-      "code": "G43.0",
-      "description": "Migraine without aura",
-      "valid": true
+      "code": "M54.5",
+      "description": "Low back pain",
+      "validation": "valid",
+      "note": "The description matches the ICD-10 database."
     },
     {
-      "code": "G43.1",
-      "description": "Migraine with aura",
-      "valid": true
-    },
-    {
-      "code": "G43.7",
-      "description": "Chronic migraine without aura",
-      "valid": false,
-      "similar_codes": [
+      "code": "M19.90",
+      "description": "Unspecified osteoarthritis, unspecified site",
+      "validation": "invalid",
+      "note": "The code M19.90 was not found in the database.",
+      "similar_suggestions": [
         {
-          "code": "G43.3",
-          "description": "Complicated migraine"
+          "code": "M06.9",
+          "description": "Rheumatoid arthritis, unspecified",
+          "url": "https://icd.who.int/browse10/2019/en#/M05-M14",
+          "chapter": "Diseases of the musculoskeletal system and connective tissue"
         },
         {
-          "code": "G43.8",
-          "description": "Other migraine"
+          "code": "M08.9",
+          "description": "Juvenile arthritis, unspecified",
+          "url": "https://icd.who.int/browse10/2019/en#/M05-M14",
+          "chapter": "Diseases of the musculoskeletal system and connective tissue"
         }
-      ],
-      "explanation": "The code G43.7 for 'Chronic migraine without aura' is not validated. Alternative codes include G43.3 for 'Complicated migraine' and G43.8 for 'Other migraine'."
+      ]
     },
     {
-      "code": "G43.8",
-      "description": "Other migraine",
-      "valid": true
-    },
-    {
-      "code": "G43.9",
-      "description": "Migraine, unspecified",
-      "valid": true
+      "code": "M79.7",
+      "description": "Fibromyalgia",
+      "validation": "valid",
+      "note": "The description matches the ICD-10 database."
     }
   ]
 }
-```
-This JSON response includes the validation status of each suggested code. All codes except "G43.7" are valid. Alternative suggestions for the invalid code "G43.7" are provided along with the explanation.

@@ -1,0 +1,20 @@
+```json
+{
+  "Suggested ICD-10 Codes": [
+    {
+      "code": "M54.5",
+      "description": "Low back pain"
+    },
+    {
+      "code": "M19.90",
+      "description": "Unspecified osteoarthritis, unspecified site"
+    },
+    {
+      "code": "M79.7",
+      "description": "Fibromyalgia"
+    }
+  ],
+  "Explanation": "The diagnosis includes three conditions: Lower Back Pain, Osteoarthritis, and Fibromyalgia. M54.5 is the appropriate code for Lower Back Pain, which is a common musculoskeletal condition. M19.90 is used for unspecified osteoarthritis when the specific site is not detailed in the diagnosis. M79.7 is the code for Fibromyalgia, a condition characterized by widespread musculoskeletal pain accompanied by fatigue, sleep, memory, and mood issues.",
+  "WHO Database URL": "https://icd.who.int/browse10/2019/en"
+}
+```

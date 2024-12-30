@@ -1,0 +1,34 @@
+```json
+{
+  "Validation Results": [
+    {
+      "Suggested Code": "I50.3",
+      "Suggested Description": "Diastolic (congestive) heart failure",
+      "Validation": "Failed",
+      "Reason": "Invalid ICD-10 code according to WHO database."
+    }
+  ],
+  "Similar Code Suggestions": [
+    {
+      "Code": "I50",
+      "Description": "Heart failure",
+      "Explanation": "Broad category covering various heart failure types."
+    },
+    {
+      "Code": "I50.0",
+      "Description": "Congestive heart failure",
+      "Explanation": "Common condition associated with heart failure symptoms."
+    },
+    {
+      "Code": "I50.1",
+      "Description": "Left ventricular failure",
+      "Explanation": "Related to ejection fraction issues."
+    },
+    {
+      "Code": "I50.9",
+      "Description": "Heart failure, unspecified",
+      "Explanation": "General use when specific type of heart failure is not listed."
+    }
+  ]
+}
+```

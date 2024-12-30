@@ -1,0 +1,13 @@
+```json
+{
+  "Suggested ICD-10 Codes": [
+    {
+      "code": "I50.3",
+      "description": "Diastolic (congestive) heart failure"
+    }
+  ],
+  "Similar Codes": [],
+  "Reasoning": "The diagnosis 'Heart failure with preserved ejection fraction' corresponds to diastolic heart failure. The ICD-10 code I50.3 accurately captures this medical condition as it represents heart failure where the heart muscle contracts normally but the ventricles do not relax as they should, preserving ejection fraction.",
+  "Source": "World Health Organization ICD-10 database: https://icd.who.int/browse10/2019/en"
+}
+```
