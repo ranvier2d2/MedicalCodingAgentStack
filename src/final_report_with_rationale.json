@@ -1,67 +1,55 @@
-```json
 {
   "final_report": {
     "diagnoses_report": [
       {
-        "diagnosis": "Migraine without aura",
-        "codes": [
-          {
-            "code": "G43.0",
-            "status": "valid",
-            "explanation": "The code G43.0 is valid for 'Migraine without aura', including the note '[common migraine]'.",
-            "rationale": "The diagnosis 'Migraine without aura' directly matches the ICD-10 code G43.0, which accurately describes the condition without additional symptoms.",
-            "url": "https://icd.who.int/browse10/2019/en#/G40-G47"
-          }
-        ]
-      },
-      {
-        "diagnosis": "Migraine with aura",
+        "diagnosis": "Migraine Severe",
         "codes": [
           {
             "code": "G43.1",
             "status": "valid",
-            "explanation": "The code G43.1 is valid for 'Migraine with aura', with the note '[classical migraine]'.",
-            "rationale": "The selection of G43.1 is justified by the specificity of the migraine's aura, which is detailed in this ICD-10 classification.",
+            "explanation": "Code G43.1 is valid for 'Migraine with aura [classical migraine]'.",
+            "rationale": "This code was chosen as it specifically covers migraines accompanied by neurological symptoms or aura, corresponding to 'Migraine with aura'.",
             "url": "https://icd.who.int/browse10/2019/en#/G40-G47"
-          }
-        ]
-      },
-      {
-        "diagnosis": "Chronic migraine without aura",
-        "codes": [
+          },
           {
-            "code": "G43.7",
-            "status": "invalid",
-            "explanation": "The code G43.7 is not found in the ICD-10 database, suggesting it may be obsolete or incorrect.",
-            "rationale": "While chronic migraine without aura is recognized clinically, the specific code G43.7 does not exist in the ICD-10 database possibly due to categorization under a different or broader code.",
-            "url": null
+            "code": "G43.0",
+            "status": "valid",
+            "explanation": "Code G43.0 is valid for 'Migraine without aura [common migraine]'.",
+            "rationale": "This code is matched because it defines migraines that do not have aura, aligning with cases where the aura is absent.",
+            "url": "https://icd.who.int/browse10/2019/en#/G40-G47"
+          },
+          {
+            "code": "G43.9",
+            "status": "valid",
+            "explanation": "Code G43.9 is valid for 'Migraine, unspecified'.",
+            "rationale": "This code is applicable when not enough detail is available to specify whether the migraine has aura, capturing general cases of unspecified migraines.",
+            "url": "https://icd.who.int/browse10/2019/en#/G40-G47"
           }
         ]
       }
     ],
     "validation_report": [
       {
-        "code": "G43.0",
-        "description": "Migraine without aura",
-        "validation_status": "valid",
-        "explanation": "The code G43.0 matches the description 'Migraine without aura' in the ICD-10 WHO database.",
-        "url": "https://icd.who.int/browse10/2019/en#/G40-G47"
-      },
-      {
         "code": "G43.1",
-        "description": "Migraine with aura",
+        "description": "Migraine with aura [classical migraine]",
         "validation_status": "valid",
-        "explanation": "The code G43.1 matches the description 'Migraine with aura' in the ICD-10 WHO database.",
+        "explanation": "The code G43.1 matches the description 'Migraine with aura'.",
         "url": "https://icd.who.int/browse10/2019/en#/G40-G47"
       },
       {
-        "code": "G43.7",
-        "description": "Invalid code - Not found in the database",
-        "validation_status": "invalid",
-        "explanation": "The code G43.7 could not be found in the ICD-10 WHO database with the description provided, suggesting incorrect or potentially outdated data.",
-        "url": null
+        "code": "G43.0",
+        "description": "Migraine without aura [common migraine]",
+        "validation_status": "valid",
+        "explanation": "The code G43.0 matches the description 'Migraine without aura'.",
+        "url": "https://icd.who.int/browse10/2019/en#/G40-G47"
+      },
+      {
+        "code": "G43.9",
+        "description": "Migraine, unspecified",
+        "validation_status": "valid",
+        "explanation": "The code G43.9 matches the description 'Migraine, unspecified'.",
+        "url": "https://icd.who.int/browse10/2019/en#/G40-G47"
       }
     ]
   }
 }
-```

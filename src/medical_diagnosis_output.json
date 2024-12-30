@@ -2,25 +2,26 @@
 {
   "potential_diagnoses": [
     {
-      "diagnosis": "Migraine",
-      "icd10_codes": [
-        {
-          "code": "G43.0",
-          "description": "Migraine without aura",
-          "explanation": "This code is used for migraines that occur without any preceding sensory disturbances (aura). It is relevant for patients experiencing migraines characterized by symptoms like pulsating pain, which often affects one side of the head, nausea, and sensitivity to light and sound."
-        },
+      "diagnosis": "Migraine severe",
+      "icd10_code_suggestions": [
         {
           "code": "G43.1",
           "description": "Migraine with aura",
-          "explanation": "This code is for migraines accompanied by aura, which are sensory disturbances that can include visual changes, such as seeing flashes of light or zigzag lines. This is relevant for patients who experience these symptoms prior to the migraine headache itself."
+          "explanation": "This code is relevant for migraines featuring neurological symptoms that often precede the headache (the aura), which could be applicable based on the severity description if there are associated auras."
         },
         {
-          "code": "G43.7",
-          "description": "Chronic migraine without aura",
-          "explanation": "This code is used for chronic migraines without aura, typically defined as headaches occurring on 15 or more days per month for more than three months. It is relevant for patients with frequent migraine attacks that connect to chronic migraine patterns."
+          "code": "G43.0",
+          "description": "Migraine without aura",
+          "explanation": "This code is prioritized second as it describes migraines presenting without aura. Severity does not specify an aura, making this a likely candidate for severe non-aura migraines."
+        },
+        {
+          "code": "G43.9",
+          "description": "Migraine, unspecified",
+          "explanation": "This code applies if the type of migraine is not specified, ensuring no assumptions are made beyond what is stated. It is useful for coding when additional migraine specifics are not documented."
         }
       ]
     }
   ]
 }
 ```
+This output lists potential diagnosis interpretations based on the text "migraine severe" and provides prioritized ICD-10 code recommendations based on standard definitions and common presentation patterns of this condition, along with detailed explanations clarifying the relevance and applicability of each code.
