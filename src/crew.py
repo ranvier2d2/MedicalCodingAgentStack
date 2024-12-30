@@ -5,19 +5,6 @@ from crewai.tasks.task_output import TaskOutput
 import tools
 
 
-# def has_unvalidated_codes(output: TaskOutput) -> bool:
-#     """
-#     Determines if the output contains unvalidated codes based on specific criteria.
-
-#     :param output: TaskOutput object to evaluate
-#     :return: True if unvalidated codes are found, otherwise False
-#     """
-#     if not hasattr(output, "json_dict") or not output.json_dict:
-#         return False
-
-#     return "unvalidated_codes" in output.json_dict and len(output.json_dict["unvalidated_codes"]) > 0
-
-
 @CrewBase
 class AstackcrewCrew:
     """A Crew setup for a medical diagnosis workflow with conditional task execution."""

@@ -1,49 +1,31 @@
 medical_diagnosis_task:
   description: >
-    Analyze each candidate medical diagnosis in <diagnosis_text>{diagnosis_text}</diagnosis_text>, identify potential diagnoses, 
-    and generate 2 (two) prioritized ICD-10 code suggestions for each potential diagnosis. 
-    Provide a detailed explanation for each suggestion and include its relevance to the diagnosis. 
-    Ensure each suggestion includes the code and the ICD-10 description.
+    Analyze the medical diagnosis text <diagnosis_text>{diagnosis_text}</diagnosis_text> 
+    and suggest ICD-10 codes. Fallback to similar codes when exact matches are unavailable.
   expected_output: >
-    JSON formatted response containing:
-    - A list of potential diagnoses derived from <diagnosis_text>{diagnosis_text}</diagnosis_text>.
-    - For each diagnosis, up to 3 validated ICD-10 codes in prioritized order (based on medical relevance) and their descriptions.
-    - Detailed explanations for why each code was chosen (rationale).
+    JSON response containing:
+    - Suggested ICD-10 codes and their descriptions.
+    - Similar codes (if any) and reasons for their inclusion.
   agent: medical_coder
   output_file: medical_diagnosis_output.json
 
 validation_task:
   description: >
-    Validate the ICD-10 codes and descriptions (separately) generated in the medical diagnosis task using the icd10_database_tool. 
-    For each suggested code:
-    - Check if the code is valid in the ICD-10 database.
-    - If the code is valid, confirm that its associated description matches the description suggested in the medical diagnosis task.
-      Mark the code as invalid if the descriptions do not align, and provide an explanation.
-    For each suggested description:
-    - Search the ICD-10 database for a matching description.
-    - If a match is found, note the associated code and mark it as valid and continue. 
-    - If no match is found, mark the description as invalid, and provide an explanation.
-    Highlight any discrepancies, mark each code and description as valid or invalid, and provide a detailed explanation for the validation status.
+    Validate the suggested ICD-10 codes and descriptions for the diagnosis text <diagnosis_text>{diagnosis_text}</diagnosis_text>. 
+    Ensure each code's description aligns with the database. 
+    Include fallback suggestions for similar codes when validation fails. And fallback codes for similar descriptions.
   expected_output: >
-    JSON formatted response containing:
-    - Validation results for each ICD-10 code and description suggested in the medical diagnosis task.
-    - For each code:
-        - Validation status (valid/invalid).
-        - An explanation justifying the status.
-        - Relevant URL linking to the validated ICD-10 WHO database entry.
-    - For each description:
-        - Validation status (valid/invalid).
-        - An explanation justifying the status.
-        - Relevant URL linking to the validated ICD-10 WHO database entry (if applicable).
-    - Discrepancies between suggested and database descriptions must be highlighted and explained.
+    JSON response containing:
+    - Validation results for each suggested code.
+    - Similar code suggestions if validation fails, with an explanation.
   agent: validation_agent
   output_file: validation_results.json
 
 reporting_task:
   description: >
-    Compile the results from the medical diagnosis and validation tasks into a structured JSON report. 
-    Include all diagnoses, their suggested ICD-10 codes, validation statuses, database URLs, and the rationale for matching diagnoses with codes. 
-    Highlight any discrepancies in the validation process.
+    Compile the results from the medical diagnosis and validation tasks for the diagnosis text <diagnosis_text>{diagnosis_text}</diagnosis_text> 
+    into a structured JSON report. Include all diagnoses, their suggested ICD-10 codes, validation statuses, 
+    database URLs, and the rationale for matching diagnoses with codes. Highlight any discrepancies in the validation process.
   expected_output: >
     JSON formatted response containing:
     - Diagnoses, ICD-10 codes, validation statuses, and database URLs.

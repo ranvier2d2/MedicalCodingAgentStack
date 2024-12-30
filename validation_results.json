@@ -1,0 +1,44 @@
+```json
+{
+  "validation_results": [
+    {
+      "code": "R51",
+      "description": "Headache",
+      "valid": true,
+      "chapter": "Chapter XVIII\nSymptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified\n(R00-R99)",
+      "url": "https://icd.who.int/browse10/2019/en#/R50-R69"
+    },
+    {
+      "code": "G44.1",
+      "description": "Vascular headache, not elsewhere classified",
+      "valid": true,
+      "chapter": "Chapter VI\nDiseases of the nervous system\n(G00-G99)",
+      "url": "https://icd.who.int/browse10/2019/en#/G40-G47"
+    },
+    {
+      "code": "G43.9",
+      "description": "Migraine, unspecified",
+      "valid": true,
+      "chapter": "Chapter VI\nDiseases of the nervous system\n(G00-G99)",
+      "url": "https://icd.who.int/browse10/2019/en#/G40-G47"
+    },
+    {
+      "code": "G44.2",
+      "description": "Tension-type headache",
+      "valid": true,
+      "chapter": "Chapter VI\nDiseases of the nervous system\n(G00-G99)",
+      "url": "https://icd.who.int/browse10/2019/en#/G40-G47"
+    },
+    {
+      "code": "G44.0",
+      "description": "Cluster headache syndrome",
+      "valid": true,
+      "chapter": "Chapter VI\nDiseases of the nervous system\n(G00-G99)",
+      "url": "https://icd.who.int/browse10/2019/en#/G40-G47"
+    }
+  ],
+  "similar_codes_explanation": "The primary code R51 is used for general headache diagnoses without further specification. G44.1 is used for vascular headaches, which are a common type of headache. G43.9 is included for cases where the headache is suspected to be a migraine but lacks specific details. G44.2 is relevant for tension-type headaches, which are another common form of headache. G44.0 is included for cluster headaches, which are a specific type of headache syndrome."
+}
+```
+
+All the provided ICD-10 codes and descriptions have been validated and are correct, matching the ICD-10 database. Thus, no alternative suggestions are required.
