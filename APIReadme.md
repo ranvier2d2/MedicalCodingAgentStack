@@ -1,216 +1,192 @@
-# AgentStack API Documentation
+Here’s an updated version of the AgentStack API Documentation, incorporating improvements for clarity and any relevant changes:
 
-This document provides an overview of the AgentStack API, its endpoints, and how to use it to interact with the backend system.
+AgentStack API Documentation
 
----
+This document provides a comprehensive guide to using the AgentStack API, detailing available endpoints and their functionality for interacting with the backend system.
 
-## **Base URL**
-The API is hosted locally for development at:
-```
+Base URL
+
+The API is hosted locally for development purposes at:
+
 http://127.0.0.1:8000
-```
 
----
+Endpoints
 
-## **Endpoints**
+1. Start a New Task
 
-### **1. Start a New Task**
-#### **POST /run**
-Initiates a new CrewAI task with the provided input.
+POST /run
 
-#### **Request**
-- **URL**: `/run`
-- **Method**: `POST`
-- **Headers**: `Content-Type: application/json`
-- **Body**:
-    ```json
-    {
-        "diagnosis_text": "<diagnosis details>"
-    }
-    ```
-    Example:
-    ```json
-    {
-        "diagnosis_text": "Seizures, Depression, Migraine"
-    }
-    ```
+This endpoint initializes a new CrewAI task based on the provided input.
 
-#### **Response**
-- **200 OK**
-    ```json
-    {
-        "task_id": "<unique-task-id>"
-    }
-    ```
-    Example:
-    ```json
-    {
-        "task_id": "123e4567-e89b-12d3-a456-426614174000"
-    }
-    ```
-- **Notes**:
-    - Use the `task_id` to query the status of the task.
+Request
+	•	URL: /run
+	•	Method: POST
+	•	Headers: Content-Type: application/json
+	•	Body:
 
----
+{
+    "diagnosis_text": "<description of the diagnosis>"
+}
 
-### **2. Query Task Status**
-#### **GET /status/{task_id}**
-Retrieves the status of a task, including partial outputs and the final result.
+Example:
 
-#### **Request**
-- **URL**: `/status/{task_id}`
-- **Method**: `GET`
-- **Path Parameter**:
-    - `task_id` (string): The unique ID of the task returned from `/run`.
+{
+    "diagnosis_text": "Seizures, Depression, Migraine"
+}
 
-#### **Response**
-- **200 OK** (Running Task):
-    ```json
-    {
-        "status": "running",
-        "result": null,
-        "partials": [
-            {
-                "subtask_name": "<subtask name>",
-                "output": "<subtask output>",
-                "details": "<additional details>",
-                "timestamp": "<timestamp>"
-            }
-        ],
-        "progress_summary": "<completed subtasks>/<total subtasks> subtasks completed",
-        "error": null
-    }
-    ```
-    Example:
-    ```json
-    {
-        "status": "running",
-        "result": null,
-        "partials": [
-            {
-                "subtask_name": "medical_diagnosis_task",
-                "output": "<structured JSON output>",
-                "details": null,
-                "timestamp": "2024-12-30T01:37:08.923607"
-            }
-        ],
-        "progress_summary": "1/3 subtasks completed",
-        "error": null
-    }
-    ```
-- **200 OK** (Completed Task):
-    ```json
-    {
-        "status": "completed",
-        "result": "<final structured JSON output>",
-        "partials": [
-            {
-                "subtask_name": "<subtask name>",
-                "output": "<subtask output>",
-                "details": "<additional details>",
-                "timestamp": "<timestamp>"
-            }
-        ],
-        "progress_summary": "<completed subtasks>/<total subtasks> subtasks completed",
-        "error": null
-    }
-    ```
-    Example:
-    ```json
-    {
-        "status": "completed",
-        "result": "<final structured JSON output>",
-        "partials": [],
-        "progress_summary": "3/3 subtasks completed",
-        "error": null
-    }
-    ```
-- **404 Not Found**:
-    ```json
-    {
-        "detail": "Task not found"
-    }
-    ```
-- **Notes**:
-    - The `partials` array includes real-time updates for each subtask.
-    - The `progress_summary` tracks the number of completed subtasks.
 
----
 
-## **Frontend Integration Tips**
+Response
+	•	200 OK
 
-### **Starting a New Task**
-1. **Send a POST request to `/run`**:
-    - Include the diagnosis text as input.
-    - Store the returned `task_id` for querying progress.
+{
+    "task_id": "<unique-task-id>"
+}
 
-### **Polling for Status**
-1. **Send a GET request to `/status/{task_id}`**:
-    - Use the `task_id` from the `/run` response.
-    - Poll every 2-5 seconds to check the task's progress.
+Example:
 
-2. **Display Real-Time Updates**:
-    - Use the `partials` field to show intermediate results.
-    - Show progress using `progress_summary`.
+{
+    "task_id": "123e4567-e89b-12d3-a456-426614174000"
+}
 
-3. **Handle Completed Tasks**:
-    - Render the `result` field once the `status` is `completed`.
 
-### **Error Handling**
-- Check for `error` in the response and display it to users if present.
-- Handle 404 errors gracefully if the `task_id` is invalid or expired.
+	•	Notes:
+	•	Use the task_id from the response to track the task’s status using the /status/{task_id} endpoint.
 
----
+2. Query Task Status
 
-## **API Workflow**
+GET /status/{task_id}
 
-1. **Start a Task**:
-    - Send a `POST /run` request.
-    - Receive the `task_id`.
+This endpoint provides the current status of a task, including intermediate results (partials) and the final output once available.
 
-2. **Monitor Progress**:
-    - Send `GET /status/{task_id}` requests periodically.
-    - Display `partials` and `progress_summary` to users.
+Request
+	•	URL: /status/{task_id}
+	•	Method: GET
+	•	Path Parameter:
+	•	task_id (string): The unique identifier of the task returned from /run.
 
-3. **Display Final Output**:
-    - Show the `result` field when the task is `completed`.
+Response
+	•	200 OK (Running Task):
 
----
+{
+    "status": "running",
+    "result": null,
+    "partials": [
+        {
+            "subtask_name": "<subtask name>",
+            "output": "<intermediate result>",
+            "details": "<additional details>",
+            "timestamp": "<timestamp>"
+        }
+    ],
+    "progress_summary": "<completed subtasks>/<total subtasks> subtasks completed",
+    "error": null
+}
 
-## **Sample Code for API Usage**
+Example:
 
-### **Using Python (Requests Library)**
-```python
+{
+    "status": "running",
+    "result": null,
+    "partials": [
+        {
+            "subtask_name": "medical_diagnosis_task",
+            "output": "<structured JSON output>",
+            "details": null,
+            "timestamp": "2024-12-30T01:37:08.923607"
+        }
+    ],
+    "progress_summary": "1/3 subtasks completed",
+    "error": null
+}
+
+
+	•	200 OK (Completed Task):
+
+{
+    "status": "completed",
+    "result": "<final structured JSON output>",
+    "partials": [],
+    "progress_summary": "3/3 subtasks completed",
+    "error": null
+}
+
+
+	•	404 Not Found:
+
+{
+    "detail": "Task not found"
+}
+
+
+	•	Notes:
+	•	The partials field contains real-time updates for completed subtasks.
+	•	Use the progress_summary field to display the completion status of the task.
+
+Frontend Integration
+
+1. Starting a Task
+	•	Send a POST /run request with the diagnosis_text payload.
+	•	Store the returned task_id for querying task progress.
+
+2. Polling for Status
+	•	Use GET /status/{task_id} with the task_id from /run to check progress.
+	•	Recommended polling interval: 2-5 seconds.
+	•	Display the following in the UI:
+	•	Intermediate results (partials).
+	•	Progress information from progress_summary.
+
+3. Handling Completed Tasks
+	•	Show the result field when the task status is completed.
+
+4. Error Handling
+	•	Check the error field in responses.
+	•	Handle 404 errors gracefully when a task is not found (e.g., expired task ID).
+
+Workflow Summary
+	1.	Start a New Task:
+	•	Initiate a task using POST /run.
+	•	Retrieve the task_id from the response.
+	2.	Monitor Progress:
+	•	Periodically poll GET /status/{task_id} to monitor task status.
+	•	Update the UI with intermediate results (partials) and progress.
+	3.	Display Final Output:
+	•	Render the result field once the task is completed.
+
+Sample Code for API Usage
+
+Using Python (Requests Library)
+
 import requests
 import time
 
-# Start a new task
-url = "http://127.0.0.1:8000/run"
-input_data = {"diagnosis_text": "Seizures, Depression, Migraine"}
-response = requests.post(url, json=input_data)
-task_id = response.json().get("task_id")
+# Step 1: Start a new task
+base_url = "http://127.0.0.1:8000"
+task_data = {"diagnosis_text": "Seizures, Depression, Migraine"}
+response = requests.post(f"{base_url}/run", json=task_data)
+task_id = response.json()["task_id"]
+print(f"Task ID: {task_id}")
 
-# Poll for task status
-status_url = f"http://127.0.0.1:8000/status/{task_id}"
+# Step 2: Poll for task status
+status_url = f"{base_url}/status/{task_id}"
 while True:
     status_response = requests.get(status_url)
-    status_data = status_response.json()
+    task_status = status_response.json()
 
-    print(f"Status: {status_data['status']}")
-    print(f"Progress: {status_data['progress_summary']}")
+    print(f"Task Status: {task_status['status']}")
+    print(f"Progress: {task_status['progress_summary']}")
 
-    if status_data['status'] == "completed":
-        print("Final Result:", status_data['result'])
+    if task_status["status"] == "completed":
+        print("Final Result:", task_status["result"])
         break
-    elif status_data['status'] == "failed":
-        print("Error:", status_data['error'])
+    elif task_status["status"] == "failed":
+        print("Error:", task_status["error"])
         break
 
     time.sleep(5)
-```
 
----
+Contact and Support
+	•	For assistance, please contact the development team.
+	•	Access the API’s Swagger interface for further details at /docs.
 
-## **Contact and Support**
-If you encounter issues or have questions, please contact the development team or refer to the API documentation provided at `/docs` (FastAPI's Swagger interface).
-
+This updated documentation clarifies usage and improves accessibility for developers integrating with the API. Let me know if further refinements are needed!

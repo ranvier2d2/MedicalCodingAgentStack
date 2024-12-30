@@ -1,0 +1,43 @@
+```json
+{
+  "validation_results": [
+    {
+      "code": "G43.0",
+      "description": "Migraine without aura",
+      "valid": true
+    },
+    {
+      "code": "G43.1",
+      "description": "Migraine with aura",
+      "valid": true
+    },
+    {
+      "code": "G43.7",
+      "description": "Chronic migraine without aura",
+      "valid": false,
+      "similar_codes": [
+        {
+          "code": "G43.3",
+          "description": "Complicated migraine"
+        },
+        {
+          "code": "G43.8",
+          "description": "Other migraine"
+        }
+      ],
+      "explanation": "The code G43.7 for 'Chronic migraine without aura' is not validated. Alternative codes include G43.3 for 'Complicated migraine' and G43.8 for 'Other migraine'."
+    },
+    {
+      "code": "G43.8",
+      "description": "Other migraine",
+      "valid": true
+    },
+    {
+      "code": "G43.9",
+      "description": "Migraine, unspecified",
+      "valid": true
+    }
+  ]
+}
+```
+This JSON response includes the validation status of each suggested code. All codes except "G43.7" are valid. Alternative suggestions for the invalid code "G43.7" are provided along with the explanation.
