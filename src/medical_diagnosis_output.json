@@ -1,27 +1,30 @@
 ```json
 {
   "potential_diagnoses": [
+    "Severe Migraine"
+  ],
+  "icd10_codes": [
     {
-      "diagnosis": "Migraine severe",
-      "icd10_code_suggestions": [
+      "diagnosis": "Severe Migraine",
+      "codes": [
         {
-          "code": "G43.1",
-          "description": "Migraine with aura",
-          "explanation": "This code is relevant for migraines featuring neurological symptoms that often precede the headache (the aura), which could be applicable based on the severity description if there are associated auras."
+          "code": "G43.719",
+          "description": "Chronic migraine without aura, intractable",
+          "rationale": "This code is prioritized because 'severe migraine' may imply an intractable nature, meaning it does not respond well to typical treatment, which is often considered more severe. The term 'chronic' also suggests frequent reoccurrences which heighten severity."
         },
         {
-          "code": "G43.0",
-          "description": "Migraine without aura",
-          "explanation": "This code is prioritized second as it describes migraines presenting without aura. Severity does not specify an aura, making this a likely candidate for severe non-aura migraines."
+          "code": "G43.119",
+          "description": "Migraine without aura, intractable",
+          "rationale": "This code is suggested due to the severity context, often linked with intractability, requiring intense management. The absence of aura narrows the classification further."
         },
         {
-          "code": "G43.9",
-          "description": "Migraine, unspecified",
-          "explanation": "This code applies if the type of migraine is not specified, ensuring no assumptions are made beyond what is stated. It is useful for coding when additional migraine specifics are not documented."
+          "code": "G43.109",
+          "description": "Migraine without aura, not intractable",
+          "rationale": "This code represents a less severe option if the migraine is not considered intractable but still lacks aura features. It accounts for standard severe migraines without chronic classification."
         }
       ]
     }
-  ]
+  ],
+  "explanations": "The codes were chosen based on their relevance to the unspecified severity descriptor 'severe migraine'. Prioritization is largely influenced by the potential chronic and intractable nature of such migraines. G43.719 and G43.119 address intractable forms which align with typical severe cases. G43.109 offers a milder interpretation assuming non-refractory to treatment."
 }
 ```
-This output lists potential diagnosis interpretations based on the text "migraine severe" and provides prioritized ICD-10 code recommendations based on standard definitions and common presentation patterns of this condition, along with detailed explanations clarifying the relevance and applicability of each code.

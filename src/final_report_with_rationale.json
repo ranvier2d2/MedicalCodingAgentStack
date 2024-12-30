@@ -1,55 +1,64 @@
+```json
 {
   "final_report": {
     "diagnoses_report": [
       {
-        "diagnosis": "Migraine Severe",
+        "diagnosis": "Chronic Migraine Without Aura, Intractable",
         "codes": [
           {
-            "code": "G43.1",
-            "status": "valid",
-            "explanation": "Code G43.1 is valid for 'Migraine with aura [classical migraine]'.",
-            "rationale": "This code was chosen as it specifically covers migraines accompanied by neurological symptoms or aura, corresponding to 'Migraine with aura'.",
-            "url": "https://icd.who.int/browse10/2019/en#/G40-G47"
-          },
+            "code": "G43.719",
+            "status": "invalid",
+            "explanation": "The code 'G43.719' does not exist in the ICD-10 database.",
+            "rationale": "The selection aimed to capture chronic migraine characteristics without aura and resistant to treatment, but the code is invalid.",
+            "url": null
+          }
+        ]
+      },
+      {
+        "diagnosis": "Migraine Without Aura, Intractable",
+        "codes": [
           {
-            "code": "G43.0",
-            "status": "valid",
-            "explanation": "Code G43.0 is valid for 'Migraine without aura [common migraine]'.",
-            "rationale": "This code is matched because it defines migraines that do not have aura, aligning with cases where the aura is absent.",
-            "url": "https://icd.who.int/browse10/2019/en#/G40-G47"
-          },
+            "code": "G43.119",
+            "status": "invalid",
+            "explanation": "The code 'G43.119' does not exist in the ICD-10 database.",
+            "rationale": "This code was meant to reflect migraines without aura that don't respond to typical interventions, but it is invalid.",
+            "url": null
+          }
+        ]
+      },
+      {
+        "diagnosis": "Migraine Without Aura, Not Intractable",
+        "codes": [
           {
-            "code": "G43.9",
-            "status": "valid",
-            "explanation": "Code G43.9 is valid for 'Migraine, unspecified'.",
-            "rationale": "This code is applicable when not enough detail is available to specify whether the migraine has aura, capturing general cases of unspecified migraines.",
-            "url": "https://icd.who.int/browse10/2019/en#/G40-G47"
+            "code": "G43.109",
+            "status": "invalid",
+            "explanation": "The code 'G43.109' does not exist in the ICD-10 database.",
+            "rationale": "Intended to cover non-refractory migraine instances without aura, yet the code does not exist.",
+            "url": null
           }
         ]
       }
     ],
     "validation_report": [
       {
-        "code": "G43.1",
-        "description": "Migraine with aura [classical migraine]",
-        "validation_status": "valid",
-        "explanation": "The code G43.1 matches the description 'Migraine with aura'.",
-        "url": "https://icd.who.int/browse10/2019/en#/G40-G47"
+        "description": "Chronic migraine without aura, intractable",
+        "validation_status": "invalid",
+        "explanation": "No matching entries for the description 'Chronic migraine without aura, intractable' were found in the ICD-10 database.",
+        "url": null
       },
       {
-        "code": "G43.0",
-        "description": "Migraine without aura [common migraine]",
-        "validation_status": "valid",
-        "explanation": "The code G43.0 matches the description 'Migraine without aura'.",
-        "url": "https://icd.who.int/browse10/2019/en#/G40-G47"
+        "description": "Migraine without aura, intractable",
+        "validation_status": "invalid",
+        "explanation": "No matching entries for the description 'Migraine without aura, intractable' were found in the ICD-10 database.",
+        "url": null
       },
       {
-        "code": "G43.9",
-        "description": "Migraine, unspecified",
-        "validation_status": "valid",
-        "explanation": "The code G43.9 matches the description 'Migraine, unspecified'.",
-        "url": "https://icd.who.int/browse10/2019/en#/G40-G47"
+        "description": "Migraine without aura, not intractable",
+        "validation_status": "invalid",
+        "explanation": "No matching entries for the description 'Migraine without aura, not intractable' were found in the ICD-10 database.",
+        "url": null
       }
     ]
   }
 }
+```
