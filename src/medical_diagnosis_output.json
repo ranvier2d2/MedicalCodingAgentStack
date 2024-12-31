@@ -1,33 +1,28 @@
-Here is the JSON response containing the suggested ICD-10 codes for "Esclerodermia" along with similar codes and reasons for their inclusion:
-
 ```json
 {
   "suggested_icd10_codes": [
     {
-      "code": "M34.0",
-      "description": "Progressive systemic sclerosis"
+      "code": "J44.9",
+      "description": "Chronic obstructive pulmonary disease, unspecified"
     },
     {
-      "code": "M34.1",
-      "description": "CR(E)ST syndrome"
+      "code": "J44.0",
+      "description": "Chronic obstructive pulmonary disease with acute lower respiratory infection"
     },
     {
-      "code": "M34.2",
-      "description": "Systemic sclerosis induced by drug and chemical"
+      "code": "J44.1",
+      "description": "Chronic obstructive pulmonary disease with (acute) exacerbation, unspecified"
     },
     {
-      "code": "M34.8",
-      "description": "Other forms of systemic sclerosis"
+      "code": "J44.8",
+      "description": "Other specified chronic obstructive pulmonary disease"
     },
     {
-      "code": "M34.9",
-      "description": "Systemic sclerosis, unspecified"
+      "code": "J43.9",
+      "description": "Emphysema, unspecified"
     }
   ],
-  "similar_codes": [],
-  "explanation": "The diagnosis 'Esclerodermia' refers to a group of autoimmune diseases that cause hardening and tightening of the skin and connective tissues. The most common form is systemic sclerosis, which is classified under the ICD-10 code M34.0. Other related conditions include CR(E)ST syndrome (M34.1), drug-induced systemic sclerosis (M34.2), and other unspecified forms of systemic sclerosis (M34.8 and M34.9). These codes are appropriate as they cover the spectrum of conditions associated with scleroderma.",
-  "who_database_url": "https://icd.who.int/browse10/2019/en"
+  "similar_codes_explanation": "The primary ICD-10 code for COPD is J44.9, which covers chronic obstructive pulmonary disease when it is unspecified. If there is an acute lower respiratory infection present, J44.0 is used. For cases with an acute exacerbation, J44.1 is appropriate. J44.8 is used for other specified types of COPD, and J43.9 is relevant if emphysema is a component of the COPD diagnosis.",
+  "reference": "Further details can be checked at the WHO ICD database: https://icd.who.int/browse10/2019/en"
 }
-``` 
-
-This response lists the relevant ICD-10 codes and provides a detailed explanation of why these codes are suitable for the diagnosis "Esclerodermia".
+```

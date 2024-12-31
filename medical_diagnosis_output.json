@@ -1,20 +1,13 @@
 ```json
 {
-  "Suggested ICD-10 Codes": [
+  "suggested_codes": [
     {
-      "code": "M54.5",
-      "description": "Low back pain"
-    },
-    {
-      "code": "M19.90",
-      "description": "Unspecified osteoarthritis, unspecified site"
-    },
-    {
-      "code": "M79.7",
-      "description": "Fibromyalgia"
+      "code": "N18.6",
+      "description": "End stage renal disease"
     }
   ],
-  "Explanation": "The diagnosis includes three conditions: Lower Back Pain, Osteoarthritis, and Fibromyalgia. M54.5 is the appropriate code for Lower Back Pain, which is a common musculoskeletal condition. M19.90 is used for unspecified osteoarthritis when the specific site is not detailed in the diagnosis. M79.7 is the code for Fibromyalgia, a condition characterized by widespread musculoskeletal pain accompanied by fatigue, sleep, memory, and mood issues.",
-  "WHO Database URL": "https://icd.who.int/browse10/2019/en"
+  "similar_codes": [],
+  "explanation": "The diagnosis of End-stage renal disease (ESRD) is directly classified under the ICD-10 code N18.6. This code is used to specify chronic kidney disease at stage 5, which is characterized by the kidneys' inability to function at a level needed for day-to-day life without dialysis or a kidney transplant. No additional codes are necessary as the diagnosis is specific and singular.",
+  "who_database_url": "https://icd.who.int/browse10/2019/en"
 }
 ```

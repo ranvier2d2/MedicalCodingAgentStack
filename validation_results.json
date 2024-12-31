@@ -1,36 +1,40 @@
+```json
 {
-  "Validation Results": [
+  "validation_results": [
     {
-      "code": "M54.5",
-      "description": "Low back pain",
-      "validation": "valid",
-      "note": "The description matches the ICD-10 database."
-    },
-    {
-      "code": "M19.90",
-      "description": "Unspecified osteoarthritis, unspecified site",
+      "suggested_code": "N18.6",
+      "description": "End stage renal disease",
       "validation": "invalid",
-      "note": "The code M19.90 was not found in the database.",
-      "similar_suggestions": [
+      "explanation": "The code 'N18.6' is not valid. However, chronic kidney disease codes are available under the category N18. Other stages of chronic kidney disease could be considered.",
+      "alternative_codes": [
         {
-          "code": "M06.9",
-          "description": "Rheumatoid arthritis, unspecified",
-          "url": "https://icd.who.int/browse10/2019/en#/M05-M14",
-          "chapter": "Diseases of the musculoskeletal system and connective tissue"
+          "code": "N18",
+          "description": "Chronic kidney disease",
+          "domain": "Renal failure (N17-N19)"
         },
         {
-          "code": "M08.9",
-          "description": "Juvenile arthritis, unspecified",
-          "url": "https://icd.who.int/browse10/2019/en#/M05-M14",
-          "chapter": "Diseases of the musculoskeletal system and connective tissue"
+          "code": "N18.1",
+          "description": "Chronic kidney disease, stage 1",
+          "domain": "Renal failure (N17-N19)"
+        },
+        {
+          "code": "N18.2",
+          "description": "Chronic kidney disease, stage 2",
+          "domain": "Renal failure (N17-N19)"
+        },
+        {
+          "code": "N18.3",
+          "description": "Chronic kidney disease, stage 3",
+          "domain": "Renal failure (N17-N19)"
+        },
+        {
+          "code": "N18.4",
+          "description": "Chronic kidney disease, stage 4",
+          "domain": "Renal failure (N17-N19)"
         }
       ]
-    },
-    {
-      "code": "M79.7",
-      "description": "Fibromyalgia",
-      "validation": "valid",
-      "note": "The description matches the ICD-10 database."
     }
   ]
 }
+```
+This JSON response includes the validation results indicating the invalidity of the original suggestion and provides alternative codes pertaining to chronic kidney disease stages.

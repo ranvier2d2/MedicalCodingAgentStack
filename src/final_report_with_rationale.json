@@ -3,81 +3,39 @@
   "final_report": {
     "diagnoses_report": [
       {
-        "diagnosis": "Esclerodermia",
+        "diagnosis": "Diabetes Mellitus 2 sin complicaciones",
         "codes": [
           {
-            "code": "M34.0",
-            "status": "valid",
-            "explanation": "Code M34.0 is valid for Progressive systemic sclerosis.",
-            "rationale": "Progressive systemic sclerosis is a form of scleroderma that matches the diagnosis.",
-            "url": "https://icd.who.int/browse10/2019/en#/M30-M36"
+            "code": "E11.9",
+            "status": "invalid",
+            "explanation": "Code E11.9 is not a valid ICD-10 code according to the WHO database.",
+            "rationale": "Type 2 diabetes mellitus without complications was initially matched with E11.9, based on the criteria of the diagnosis being specified without complications. However, the code was found to be invalid.",
+            "url": null
           },
           {
-            "code": "M34.1",
+            "code": "E11",
             "status": "valid",
-            "explanation": "Code M34.1 is valid for CR(E)ST syndrome.",
-            "rationale": "CR(E)ST syndrome is a variant of systemic sclerosis covered under scleroderma.",
-            "url": "https://icd.who.int/browse10/2019/en#/M30-M36"
-          },
-          {
-            "code": "M34.2",
-            "status": "valid",
-            "explanation": "Code M34.2 is valid for Systemic sclerosis induced by drug and chemical.",
-            "rationale": "This code is used when scleroderma is induced by external agents.",
-            "url": "https://icd.who.int/browse10/2019/en#/M30-M36"
-          },
-          {
-            "code": "M34.8",
-            "status": "valid",
-            "explanation": "Code M34.8 is valid for Other forms of systemic sclerosis.",
-            "rationale": "Covers other specific types of systemic sclerosis not individually classified.",
-            "url": "https://icd.who.int/browse10/2019/en#/M30-M36"
-          },
-          {
-            "code": "M34.9",
-            "status": "valid",
-            "explanation": "Code M34.9 is valid for Systemic sclerosis, unspecified.",
-            "rationale": "Used when the specific type of systemic sclerosis is not specified.",
-            "url": "https://icd.who.int/browse10/2019/en#/M30-M36"
+            "explanation": "Code E11 is valid for Type 2 diabetes mellitus as per the WHO database.",
+            "rationale": "Type 2 diabetes mellitus without further specifications was associated with E11, being a more general category that correctly identifies the clinical condition.",
+            "url": "https://icd.who.int/browse10/2019/en#/E10-E14"
           }
         ]
       }
     ],
     "validation_report": [
       {
-        "code": "M34.0",
-        "description": "Progressive systemic sclerosis",
-        "validation_status": "valid",
-        "explanation": "The code M34.0 matches the description 'Progressive systemic sclerosis' in the ICD-10 WHO database.",
-        "url": "https://icd.who.int/browse10/2019/en#/M30-M36"
+        "code": "E11.9",
+        "description": "Invalid code - Not found in the database",
+        "validation_status": "invalid",
+        "explanation": "The code E11.9 could not be found in the ICD-10 WHO database with the description provided, suggesting incorrect information or misclassification.",
+        "url": null
       },
       {
-        "code": "M34.1",
-        "description": "CR(E)ST syndrome",
+        "code": "E11",
+        "description": "Type 2 diabetes mellitus",
         "validation_status": "valid",
-        "explanation": "The code M34.1 matches the description 'CR(E)ST syndrome' in the ICD-10 WHO database.",
-        "url": "https://icd.who.int/browse10/2019/en#/M30-M36"
-      },
-      {
-        "code": "M34.2",
-        "description": "Systemic sclerosis induced by drug and chemical",
-        "validation_status": "valid",
-        "explanation": "The code M34.2 description is a minor wording variation but effectively matches the ICD-10 WHO database.",
-        "url": "https://icd.who.int/browse10/2019/en#/M30-M36"
-      },
-      {
-        "code": "M34.8",
-        "description": "Other forms of systemic sclerosis",
-        "validation_status": "valid",
-        "explanation": "The code M34.8 matches the description 'Other forms of systemic sclerosis' in the ICD-10 WHO database.",
-        "url": "https://icd.who.int/browse10/2019/en#/M30-M36"
-      },
-      {
-        "code": "M34.9",
-        "description": "Systemic sclerosis, unspecified",
-        "validation_status": "valid",
-        "explanation": "The code M34.9 matches the description 'Systemic sclerosis, unspecified' in the ICD-10 WHO database.",
-        "url": "https://icd.who.int/browse10/2019/en#/M30-M36"
+        "explanation": "The code E11 is valid and matches the description 'Type 2 diabetes mellitus' in the ICD-10 WHO database.",
+        "url": "https://icd.who.int/browse10/2019/en#/E10-E14"
       }
     ]
   }

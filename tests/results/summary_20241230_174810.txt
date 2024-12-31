@@ -1,0 +1,5 @@
+Test Execution Summary
+=====================
+Date: 2024-12-30T17:48:10.582180
+Mode: integration
+Exit Code: 1

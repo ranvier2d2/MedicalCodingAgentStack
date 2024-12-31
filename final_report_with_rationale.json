@@ -3,76 +3,39 @@
   "final_report": {
     "diagnoses_report": [
       {
-        "diagnosis": "Lower Back Pain",
+        "diagnosis": "End-stage renal disease (ESRD)",
         "codes": [
           {
-            "code": "M54.5",
-            "status": "valid",
-            "explanation": "Code M54.5 is valid for Low back pain.",
-            "rationale": "This code is assigned because it specifically matches the diagnosis of lower back pain.",
-            "url": "https://icd.who.int/browse10/2019/en#/M50-M54"
-          }
-        ]
-      },
-      {
-        "diagnosis": "Osteoarthritis",
-        "codes": [
-          {
-            "code": "M19.90",
+            "code": "N18.6",
             "status": "invalid",
-            "explanation": "Code M19.90 was not found in the ICD-10 database.",
-            "rationale": "Unspecified osteoarthritis at an unspecified site was selected due to a general diagnosis of osteoarthritis, but the code was invalid."
+            "explanation": "The code 'N18.6' is designated for 'End stage renal disease' but was found invalid in the current ICD-10 database. It is possible that this code is not recognized in the version or the context used.",
+            "rationale": "This code was originally selected due to its specific mention of end-stage renal disease. However, validation has shown it is not a recognized entry in the database.",
+            "url": null
           },
           {
-            "code": "M06.9",
-            "status": "suggested",
-            "explanation": "The suggested code M06.9 for Rheumatoid arthritis is similar but not an exact match.",
-            "rationale": "Rheumatoid arthritis, unspecified, was suggested as an alternative based on its similar classification in arthritis conditions.",
-            "url": "https://icd.who.int/browse10/2019/en#/M05-M14"
-          },
-          {
-            "code": "M08.9",
-            "status": "suggested",
-            "explanation": "The suggested code M08.9 for Juvenile arthritis is similar but not an exact match.",
-            "rationale": "Juvenile arthritis, unspecified, was suggested as an alternative based on its classification in arthritis conditions.",
-            "url": "https://icd.who.int/browse10/2019/en#/M05-M14"
-          }
-        ]
-      },
-      {
-        "diagnosis": "Fibromyalgia",
-        "codes": [
-          {
-            "code": "M79.7",
+            "code": "N18",
             "status": "valid",
-            "explanation": "Code M79.7 is valid for Fibromyalgia.",
-            "rationale": "The code is accurately matched to the diagnosis of fibromyalgia, which is a recognized condition within ICD-10.",
-            "url": "https://icd.who.int/browse10/2019/en#/M70-M79"
+            "explanation": "The code 'N18' is for 'Chronic kidney disease' and serves as an umbrella category for stages of chronic kidney disease, validated as accurate within the ICD-10 database.",
+            "rationale": "Given the invalidity of 'N18.6', a relevant broader category for chronic kidney disease was explored.",
+            "url": "https://icd.who.int/browse10/2019/en#/N17-N19"
           }
         ]
       }
     ],
     "validation_report": [
       {
-        "code": "M54.5",
-        "description": "Low back pain",
-        "validation_status": "valid",
-        "explanation": "The code M54.5 matches the description 'Low back pain' in the ICD-10 WHO database.",
-        "url": "https://icd.who.int/browse10/2019/en#/M50-M54"
-      },
-      {
-        "code": "M19.90",
-        "description": "Unspecified osteoarthritis, unspecified site",
+        "code": "N18.6",
+        "description": "End stage renal disease",
         "validation_status": "invalid",
-        "explanation": "The code M19.90 was not found in the ICD-10 WHO database.",
+        "explanation": "The code 'N18.6' was not validated in the ICD-10 WHO database, suggesting it is incorrect or outdated.",
         "url": null
       },
       {
-        "code": "M79.7",
-        "description": "Fibromyalgia",
+        "code": "N18",
+        "description": "Chronic kidney disease",
         "validation_status": "valid",
-        "explanation": "The code M79.7 matches the description 'Fibromyalgia' in the ICD-10 WHO database.",
-        "url": "https://icd.who.int/browse10/2019/en#/M70-M79"
+        "explanation": "'N18' is validated as it covers all stages of chronic kidney disease under its category.",
+        "url": "https://icd.who.int/browse10/2019/en#/N17-N19"
       }
     ]
   }

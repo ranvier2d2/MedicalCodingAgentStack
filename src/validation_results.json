@@ -1,38 +1,19 @@
 ```json
 {
-  "validation_results": [
+  "ValidationResults": [
     {
-      "code": "M34.0",
-      "description": "Progressive systemic sclerosis",
-      "valid": true,
-      "note": "Description matches the official WHO description."
-    },
-    {
-      "code": "M34.1",
-      "description": "CR(E)ST syndrome",
-      "valid": true,
-      "note": "Description matches the official WHO description."
-    },
-    {
-      "code": "M34.2",
-      "description": "Systemic sclerosis induced by drug and chemical",
-      "valid": true,
-      "note": "Minor wording difference; description effectively matches the official WHO description."
-    },
-    {
-      "code": "M34.8",
-      "description": "Other forms of systemic sclerosis",
-      "valid": true,
-      "note": "Description matches the official WHO description."
-    },
-    {
-      "code": "M34.9",
-      "description": "Systemic sclerosis, unspecified",
-      "valid": true,
-      "note": "Description matches the official WHO description."
+      "Suggested Code": "E11.9",
+      "Description": "Type 2 diabetes mellitus without complications",
+      "Validation": "Invalid ICD-10 code",
+      "Note": "The code 'E11.9' is not valid according to the WHO database.",
+      "Alternatives": [
+        {
+          "Code": "E11",
+          "Description": "Type 2 diabetes mellitus",
+          "Domain": "Diabetes mellitus (E10-E14)"
+        }
+      ]
     }
-  ],
-  "similar_code_suggestions": [],
-  "explanation": "All provided codes and descriptions for 'Esclerodermia' are valid and match the WHO database as specified."
+  ]
 }
 ```
